@@ -32,6 +32,7 @@
     ".babelrc",
     "esdoc.json",
     ".gitignore",
+    ".npmignore",
     "gulpfile.js"
   ],
   "license": "MIT",
