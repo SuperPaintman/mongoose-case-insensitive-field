@@ -1,3 +1,5 @@
 'use strict';
 
-module.exports = require('./bin/');
+var requireDefault = require('require-default');
+
+module.exports = requireDefault('./bin/');

@@ -2,7 +2,7 @@
   "name": "mongoose-case-insensitive-field",
   "version": "0.0.1",
   "description": "mongoose case insensitive field support",
-  "main": "bin/index.js",
+  "main": "index.js",
   "author": {
     "name": "SuperPaintman",
     "email": "SuperPaintmanDeveloper@gmail.com",
@@ -57,5 +57,7 @@
     "mocha": "^2.4.5",
     "require-dir": "^0.3.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "require-default": "0.0.4"
+  }
 }
