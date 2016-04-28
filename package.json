@@ -1,6 +1,6 @@
 {
   "name": "mongoose-case-insensitive-field",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "mongoose case insensitive field support",
   "main": "index.js",
   "author": {
@@ -55,9 +55,11 @@
     "gulp-util": "^3.0.7",
     "js-yaml": "^3.6.0",
     "mocha": "^2.4.5",
+    "mongoose": "^4.4.14",
     "require-dir": "^0.3.0"
   },
   "dependencies": {
-    "require-default": "0.0.4"
+    "lodash": "^4.11.1",
+    "require-default": "0.0.5"
   }
 }

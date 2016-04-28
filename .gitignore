@@ -9,3 +9,6 @@ bin/
 
 # Docs
 docs/
+
+# Test file
+__test.js
