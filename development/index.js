@@ -3,6 +3,71 @@
 import _          from 'lodash';
 
 /** Init */
+/**
+ * Mongoose plugin: case-insensitive field
+ *
+ * ### Example
+ * ```js
+ * 'use strict';
+ * import mongoose                      from 'mongoose';
+ * import mongooseCaseInsensitiveField  from 'mongoose-case-insensitive-field';
+ *
+ * const Schema = mongoose.Schema;
+ * 
+ * const UserSchema = new Schema({
+ *   email: {
+ *     type: String,
+ *     required: true,
+ *     unique: true,
+ *     select: true,
+ *     caseInsensitive: true // <- this option makes the field case-onsensitive
+ *   },
+ *   username: String
+ * });
+ *
+ * UserSchema.plugin(mongooseCaseInsensitiveField, {
+ *   paths: ['username'] // <- or specify the paths here
+ * });
+ *
+ * const User = mongoose.model('User', UserSchema);
+ *
+ * const user = new User({
+ *   email: 'SuperPaintmanDeveloper@gmail.com',
+ *   username: 'SuperPaintman'
+ * });
+ *
+ * user.save();
+ *   .then(() => {
+ *     return User.find({
+ *       email: 'SuPeRpAiNtMaNdEvElOpEr@gmail.COM'
+ *     });
+ *   })
+ *   .then((user) => {
+ *     console.log(user); // <- Although the case is invalid, the user is found
+ *   });
+ * ```
+ *
+ * or globally
+ *
+ * ```js
+ * 'use strict';
+ * import mongoose                      from 'mongoose';
+ * import mongooseCaseInsensitiveField  from 'mongoose-case-insensitive-field';
+ *
+ * mongoose.plugin(mongooseCaseInsensitiveField);
+ *
+ * // ...
+ * ```
+ * 
+ * @param  {Schema}           schema
+ * 
+ * @param  {Object}           [options={}]
+ * @param  {String}           [options.prefix="__"]        - prefix for case-insensitive path
+ * @param  {String}           [options.suffix=""]          - suffix for case-insensitive path
+ * @param  {Boolean}          [options.select=false]       - default select options for case-insensitive path
+ * @param  {String[]|String}  [options.paths=[]]           - array if case-insensitive paths
+ * @param  {Boolean}          [options.usePathOption=true] - use 'caseInsensitive' from schema
+ */
 export default function caseInsensitiveField(schema, options) {
   options = _.merge({
     prefix: '__',

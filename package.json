@@ -1,6 +1,6 @@
 {
   "name": "mongoose-case-insensitive-field",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "mongoose case insensitive field support",
   "main": "index.js",
   "author": {
