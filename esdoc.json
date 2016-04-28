@@ -1,0 +1,21 @@
+{
+  "source": "./development",
+  "destination": "./docs",
+  "includes": [
+    "index\\.js$"
+  ],
+  "index": "./README.md",
+  "package": "./package.json",
+  "test": {
+    "type": "mocha",
+    "source": "./development/test/",
+    "includes": [
+      "\\.(js|es6)$"
+    ]
+  },
+  "plugins": [
+    { "name": "esdoc-es7-plugin" }
+  ],
+  "includeSource": true,
+  "lint": true
+}
