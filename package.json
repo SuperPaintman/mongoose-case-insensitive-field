@@ -10,7 +10,7 @@
   },
   "scripts": {
     "start": "gulp watch",
-    "build": "gulp clear && gulp build",
+    "build": "gulp clear && gulp default",
     "build:docs": "esdoc -c ./esdoc.json",
     "lint": "gulp lint",
     "test": "npm run lint && mocha ./bin/test",
@@ -26,6 +26,7 @@
     "gulp",
     "README",
     "README.md",
+    "index.js",
     ".editorconfig",
     ".eslintrc.yml",
     ".babelrc",
